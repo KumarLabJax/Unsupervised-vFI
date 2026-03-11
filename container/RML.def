@@ -1,0 +1,17 @@
+Bootstrap: docker
+From:rocker/tidyverse:latest
+%post
+        apt-get update
+        apt-get -y install locales build-essential cmake slurm-client
+        apt-get -y install python3 python3-pip 
+	locale-gen en_US.UTF-8
+        update-locale LANG=en_US.UTF-8
+        export DEBIAN_FRONTEND=noninteractive
+        echo 'Etc/UTC' > /etc/timezone
+        apt-get install -y libnlopt-dev 
+        apt-get install -y build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev libgit2-dev
+        Rscript -e 'install.packages(c("nanonext", "mlr3verse", "pak", "lightgbm", "ranger", "mlr3oml", "mlr3batchmark", "mlr3benchmark", "batchtools", "future", "data.table", "glmnet", "xgboost", "future", "reticulate", "lme4", "RLRsim", "shapr", "DiceKriging", "rgenoud", "iml", "fastshap", "vip"), repos="https://cran.rstudio.com")'
+        Rscript -e 'pak::pak("mlr-org/mlr3extralearners@*release")'
+	Rscript -e 'pak::pak("mlr-org/mlr3torch")'
+
+
