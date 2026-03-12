@@ -40,7 +40,7 @@ Unsupervised-vFI/b
 
 | File | Description |
 |------|-------------|
-| `RML.def` | Singularity container definition file. Builds from `rocker/tidyverse:latest` and installs all required R packages (`mlr3verse`, `ranger`, `xgboost`, `lightgbm`, `glmnet`, `lme4`, `iml`, etc.) and Python dependencies needed to reproduce the analysis. Build with `singularity build RML.sif RML.def`. |
+| `RML.def` | Singularity container definition file. Builds from `rocker/tidyverse:latest` and installs all required R packages and Python dependencies needed to reproduce the analysis. Build with `singularity build RML.sif RML.def`. |
 
 ---
 
@@ -88,7 +88,7 @@ singularity build RML.sif container/RML.def
 
 ## Related Repositories
 
-- [**unsupervised-aging**](https://github.com/dmiao623/unsupervised-aging) — Pipeline for extracting unsupervised behavioral features (Keypoint-MoSeq embeddings, syllable usage, and meta-syllable transition probabilities) from the B6J-DO dataset used in this manuscript.
+- [**B6JDO-KPMS-Pipeline**](https://github.com/KumarLabJax/B6JDO-KPMS-Pipeline) — Pipeline for training the B6J-DO KPMS model, running inference, and extracting unsupervised behavioral features (Keypoint-MoSeq embeddings, syllable usage, and meta-syllable transition probabilities) from the B6J-DO dataset used in this manuscript.
 
 ---
 
